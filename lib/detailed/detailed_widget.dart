@@ -30,6 +30,13 @@ class _DetailedWidgetState extends State<DetailedWidget> {
   final formKey = GlobalKey<FormState>();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   void dispose() {
     _unfocusNode.dispose();
     textController2?.dispose();

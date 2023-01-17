@@ -30,6 +30,7 @@ class _GetEventIdCopyWidgetState extends State<GetEventIdCopyWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

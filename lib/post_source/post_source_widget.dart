@@ -23,6 +23,7 @@ class _PostSourceWidgetState extends State<PostSourceWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

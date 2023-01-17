@@ -21,6 +21,7 @@ class _GetEventCopyWidgetState extends State<GetEventCopyWidget> {
   void initState() {
     super.initState();
     dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

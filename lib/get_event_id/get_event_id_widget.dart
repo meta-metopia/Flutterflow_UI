@@ -25,6 +25,7 @@ class _GetEventIdWidgetState extends State<GetEventIdWidget> {
     super.initState();
     dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

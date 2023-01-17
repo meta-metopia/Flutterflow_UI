@@ -23,6 +23,7 @@ class _DeleteEventIdWidgetState extends State<DeleteEventIdWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

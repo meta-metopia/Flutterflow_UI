@@ -23,6 +23,7 @@ class _PostEtWidgetState extends State<PostEtWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
