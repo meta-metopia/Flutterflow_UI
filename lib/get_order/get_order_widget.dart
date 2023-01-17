@@ -46,6 +46,15 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
+                        ),
+                      ),
+                    ),
                     InkWell(
                       onTap: () async {
                         context.pushNamed('get_event');
@@ -211,13 +220,6 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                             ),
                           ],
                         ),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: 304.4,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiaryColor,
                       ),
                     ),
                     InkWell(
