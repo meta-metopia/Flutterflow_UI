@@ -46,13 +46,6 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: 304.4,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiaryColor,
-                      ),
-                    ),
                     InkWell(
                       onTap: () async {
                         context.pushNamed('get_event');
@@ -95,7 +88,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                     ),
                     InkWell(
                       onTap: () async {
-                        context.pushNamed('get_et');
+                        context.pushNamed('get_event');
                       },
                       child: Container(
                         width: double.infinity,
@@ -116,7 +109,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               child: Icon(
-                                Icons.threesixty_sharp,
+                                Icons.airport_shuttle,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24,
                               ),
@@ -125,7 +118,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 3, 0, 5),
                               child: Text(
-                                'Event \nType',
+                                'Event',
                                 style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
@@ -217,6 +210,13 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                             ),
                           ],
                         ),
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 304.4,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).tertiaryColor,
                       ),
                     ),
                     InkWell(
