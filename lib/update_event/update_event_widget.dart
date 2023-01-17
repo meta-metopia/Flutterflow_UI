@@ -113,8 +113,7 @@ class _UpdateEventWidgetState extends State<UpdateEventWidget> {
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
+                                        color: Color(0xFFFF6E00),
                                       ),
                                 ),
                               ),
