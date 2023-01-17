@@ -88,7 +88,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                     ),
                     InkWell(
                       onTap: () async {
-                        context.pushNamed('get_event');
+                        context.pushNamed('get_et');
                       },
                       child: Container(
                         width: double.infinity,
@@ -109,7 +109,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               child: Icon(
-                                Icons.airport_shuttle,
+                                Icons.threesixty_sharp,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24,
                               ),
@@ -118,7 +118,8 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 3, 0, 5),
                               child: Text(
-                                'Event',
+                                'Event\nType',
+                                textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
