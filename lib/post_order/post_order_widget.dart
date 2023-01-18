@@ -377,7 +377,7 @@ class _PostOrderWidgetState extends State<PostOrderWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Get All Orders',
+                                                          'Get all Orders',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -449,7 +449,7 @@ class _PostOrderWidgetState extends State<PostOrderWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Post Your Order',
+                                                          'Post an Order',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1

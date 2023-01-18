@@ -381,7 +381,7 @@ class _GetEventIdWidgetState extends State<GetEventIdWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Get All Events',
+                                                          'Get all Events',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1

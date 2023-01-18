@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class GetEventWidget extends StatefulWidget {
-  const GetEventWidget({Key? key}) : super(key: key);
+class GetEtIdWidget extends StatefulWidget {
+  const GetEtIdWidget({Key? key}) : super(key: key);
 
   @override
-  _GetEventWidgetState createState() => _GetEventWidgetState();
+  _GetEtIdWidgetState createState() => _GetEtIdWidgetState();
 }
 
-class _GetEventWidgetState extends State<GetEventWidget> {
+class _GetEtIdWidgetState extends State<GetEtIdWidget> {
   TextEditingController? textController;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -90,13 +90,13 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                       height: 45,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                            .tertiaryColor,
                                         borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: Icon(
                                         Icons.airport_shuttle,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
+                                            .primaryText,
                                         size: 24,
                                       ),
                                     ),
@@ -106,13 +106,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                       child: Text(
                                         'Event',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
+                                            .bodyText1,
                                       ),
                                     ),
                                   ],
@@ -139,13 +133,13 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                       height: 45,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .tertiaryColor,
+                                            .alternate,
                                         borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: Icon(
                                         Icons.threesixty_sharp,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryColor,
                                         size: 24,
                                       ),
                                     ),
@@ -156,7 +150,13 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                         'Event\nType',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -340,79 +340,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                     30, 30, 30, 10),
                                             child: InkWell(
                                               onTap: () async {
-                                                context.pushNamed('get_event');
-                                              },
-                                              child: Container(
-                                                width: 100,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .tertiaryColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(30, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    10, 0),
-                                                        child: Icon(
-                                                          Icons.star_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          size: 24,
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0, 2, 0, 0),
-                                                        child: Text(
-                                                          'Get all  Events',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    30, 10, 30, 10),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                context.pushNamed('post_event');
+                                                context.pushNamed('get_et');
                                               },
                                               child: Container(
                                                 width: 100,
@@ -426,7 +354,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(30, 0, 0, 0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -453,7 +381,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Post an Event',
+                                                          'Get all Event Types',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -485,8 +413,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                     30, 10, 30, 10),
                                             child: InkWell(
                                               onTap: () async {
-                                                context
-                                                    .pushNamed('get_event_id');
+                                                context.pushNamed('post_et');
                                               },
                                               child: Container(
                                                 width: 100,
@@ -500,7 +427,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(30, 0, 0, 0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -527,7 +454,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Search for Event',
+                                                          'Post an Event Type',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -537,6 +464,78 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    30, 10, 30, 10),
+                                            child: InkWell(
+                                              onTap: () async {
+                                                context.pushNamed('get_et_id');
+                                              },
+                                              child: Container(
+                                                width: 100,
+                                                height: 50,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10, 0, 0, 0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(0, 0,
+                                                                    10, 0),
+                                                        child: Icon(
+                                                          Icons.star_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 24,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 2, 0, 0),
+                                                        child: Text(
+                                                          'Search for Event Type',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
                                                               ),
                                                         ),
                                                       ),
@@ -619,7 +618,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(20, 0, 0, 0),
                                                 child: Text(
-                                                  'Search Order',
+                                                  'Search for Event Type',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
@@ -664,9 +663,9 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'OrderID',
+                                                labelText: 'Event Type ID',
                                                 hintText:
-                                                    'Tap ID of order here...',
+                                                    'Type ID of event type here...',
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText2,

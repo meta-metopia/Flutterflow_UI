@@ -86,11 +86,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GetOrderWidget(),
             ),
             FFRoute(
-              name: 'post_source',
-              path: 'postSource',
-              builder: (context, params) => PostSourceWidget(),
-            ),
-            FFRoute(
               name: 'post_order',
               path: 'postOrder',
               builder: (context, params) => PostOrderWidget(),
@@ -101,6 +96,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GetOrderIdWidget(),
             ),
             FFRoute(
+              name: 'post_source',
+              path: 'postSource',
+              builder: (context, params) => PostSourceWidget(),
+            ),
+            FFRoute(
               name: 'post_event',
               path: 'postEvent',
               builder: (context, params) => PostEventWidget(),
@@ -109,6 +109,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'get_et',
               path: 'getEt',
               builder: (context, params) => GetEtWidget(),
+            ),
+            FFRoute(
+              name: 'get_et_id',
+              path: 'getEtId',
+              builder: (context, params) => GetEtIdWidget(),
+            ),
+            FFRoute(
+              name: 'get_source_id',
+              path: 'getSourceId',
+              builder: (context, params) => GetSourceIdWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
