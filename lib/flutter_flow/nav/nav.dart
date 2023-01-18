@@ -119,6 +119,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'theme_page',
               path: 'themePage',
               builder: (context, params) => ThemePageWidget(),
+            ),
+            FFRoute(
+              name: 'post_order',
+              path: 'postOrder',
+              builder: (context, params) => PostOrderWidget(),
+            ),
+            FFRoute(
+              name: 'delete_order',
+              path: 'deleteOrder',
+              builder: (context, params) => DeleteOrderWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

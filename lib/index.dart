@@ -17,3 +17,5 @@ export 'get_source/get_source_widget.dart' show GetSourceWidget;
 export 'get_order/get_order_widget.dart' show GetOrderWidget;
 export 'post_source/post_source_widget.dart' show PostSourceWidget;
 export 'theme_page/theme_page_widget.dart' show ThemePageWidget;
+export 'post_order/post_order_widget.dart' show PostOrderWidget;
+export 'delete_order/delete_order_widget.dart' show DeleteOrderWidget;
