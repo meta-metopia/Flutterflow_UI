@@ -29,23 +29,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => HomePageWidget(),
+      errorBuilder: (context, _) => GetEventIdCopyWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomePageWidget(),
+          builder: (context, _) => GetEventIdCopyWidget(),
           routes: [
-            FFRoute(
-              name: 'update_event',
-              path: 'updateEvent',
-              builder: (context, params) => UpdateEventWidget(),
-            ),
-            FFRoute(
-              name: 'delete_event_id',
-              path: 'deleteEventId',
-              builder: (context, params) => DeleteEventIdWidget(),
-            ),
             FFRoute(
               name: 'get_event_id',
               path: 'getEventId',
@@ -81,16 +71,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'update_eventCopy',
-              path: 'updateEventCopy',
-              builder: (context, params) => UpdateEventCopyWidget(),
-            ),
-            FFRoute(
-              name: 'get_et',
-              path: 'getEt',
-              builder: (context, params) => GetEtWidget(),
-            ),
-            FFRoute(
               name: 'post_et',
               path: 'postEt',
               builder: (context, params) => PostEtWidget(),
@@ -111,11 +91,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PostSourceWidget(),
             ),
             FFRoute(
-              name: 'theme_page',
-              path: 'themePage',
-              builder: (context, params) => ThemePageWidget(),
-            ),
-            FFRoute(
               name: 'post_order',
               path: 'postOrder',
               builder: (context, params) => PostOrderWidget(),
@@ -129,6 +104,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'post_event',
               path: 'postEvent',
               builder: (context, params) => PostEventWidget(),
+            ),
+            FFRoute(
+              name: 'get_et',
+              path: 'getEt',
+              builder: (context, params) => GetEtWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

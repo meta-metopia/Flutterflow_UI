@@ -396,45 +396,35 @@ class _GetEventIdCopyWidgetState extends State<GetEventIdCopyWidget> {
                                 EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
                           ),
                         ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('update_event');
-                          },
-                          child: ListTile(
-                            title: Text(
-                              'Update an Event',
-                              style: FlutterFlowTheme.of(context).subtitle1,
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF303030),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
-                            contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
+                        ListTile(
+                          title: Text(
+                            'Update an Event',
+                            style: FlutterFlowTheme.of(context).subtitle1,
                           ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF303030),
+                            size: 20,
+                          ),
+                          tileColor: Color(0xFFF5F5F5),
+                          dense: false,
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
                         ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('delete_event_id');
-                          },
-                          child: ListTile(
-                            title: Text(
-                              'Delete Event by ID',
-                              style: FlutterFlowTheme.of(context).subtitle1,
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF303030),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
-                            contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
+                        ListTile(
+                          title: Text(
+                            'Delete Event by ID',
+                            style: FlutterFlowTheme.of(context).subtitle1,
                           ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF303030),
+                            size: 20,
+                          ),
+                          tileColor: Color(0xFFF5F5F5),
+                          dense: false,
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
                         ),
                       ],
                     ),

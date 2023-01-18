@@ -388,31 +388,23 @@ class _GetEventCopyWidgetState extends State<GetEventCopyWidget> {
                       contentPadding:
                           EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
                     ),
-                    InkWell(
-                      onTap: () async {
-                        context.pushNamed('delete_event_id');
-                      },
-                      child: ListTile(
-                        title: Text(
-                          'Delete Event by ID',
-                          style: FlutterFlowTheme.of(context)
-                              .subtitle1
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                              ),
-                        ),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Color(0xFF303030),
-                          size: 20,
-                        ),
-                        tileColor: FlutterFlowTheme.of(context).primaryColor,
-                        dense: false,
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
+                    ListTile(
+                      title: Text(
+                        'Delete Event by ID',
+                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                            ),
                       ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Color(0xFF303030),
+                        size: 20,
+                      ),
+                      tileColor: FlutterFlowTheme.of(context).primaryColor,
+                      dense: false,
+                      contentPadding:
+                          EdgeInsetsDirectional.fromSTEB(10, 10, 0, 10),
                     ),
                     Expanded(
                       child: Container(
