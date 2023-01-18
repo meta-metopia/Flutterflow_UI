@@ -44,6 +44,7 @@ abstract class FlutterFlowTheme {
   late Color titleColor;
   late Color subtitleColor;
   late Color fill;
+  late Color loginButton;
 
   String get title1Family => typography.title1Family;
   TextStyle get title1 => typography.title1;
@@ -64,20 +65,21 @@ abstract class FlutterFlowTheme {
 }
 
 class LightModeTheme extends FlutterFlowTheme {
-  late Color primaryColor = const Color(0xFFF7F3F3);
-  late Color secondaryColor = const Color(0xFFF5F1EE);
-  late Color tertiaryColor = const Color(0xFFFFDAD6);
-  late Color alternate = const Color(0xFF995671);
+  late Color primaryColor = const Color(0xFFEEF2F3);
+  late Color secondaryColor = const Color(0xFFE0E4E7);
+  late Color tertiaryColor = const Color(0xFF9CBBF4);
+  late Color alternate = const Color(0xFF273C77);
   late Color primaryBackground = const Color(0xFFFFFFFF);
   late Color secondaryBackground = const Color(0xFFE3D2CC);
-  late Color primaryText = const Color(0xFF343942);
-  late Color secondaryText = const Color(0xFFA8A2A0);
+  late Color primaryText = const Color(0xFF353331);
+  late Color secondaryText = const Color(0xFF8C8F99);
 
   late Color primaryBtnText = Color(0xFFFFDAD6);
   late Color lineColor = Color(0xFFE0E3E7);
   late Color titleColor = Color(0xFF635A58);
   late Color subtitleColor = Color(0xFF7B6E6C);
-  late Color fill = Color(0xFFEDE9E9);
+  late Color fill = Color(0xFFE5E9EA);
+  late Color loginButton = Color(0xFF273C77);
 }
 
 abstract class Typography {
@@ -168,6 +170,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color titleColor = Color(0xFF57A505);
   late Color subtitleColor = Color(0xFFDEAFBD);
   late Color fill = Color(0xFF7404B4);
+  late Color loginButton = Color(0xFF5DF9BA);
 }
 
 extension TextStyleHelper on TextStyle {

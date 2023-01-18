@@ -29,12 +29,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => GetEventIdCopyWidget(),
+      errorBuilder: (context, _) => HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => GetEventIdCopyWidget(),
+          builder: (context, _) => HomePageWidget(),
           routes: [
             FFRoute(
               name: 'get_event_id',
@@ -101,14 +101,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PostSourceWidget(),
             ),
             FFRoute(
-              name: 'post_event',
-              path: 'postEvent',
-              builder: (context, params) => PostEventWidget(),
-            ),
-            FFRoute(
               name: 'get_et',
               path: 'getEt',
               builder: (context, params) => GetEtWidget(),
+            ),
+            FFRoute(
+              name: 'post_event',
+              path: 'postEvent',
+              builder: (context, params) => PostEventWidget(),
             ),
             FFRoute(
               name: 'get_et_id',

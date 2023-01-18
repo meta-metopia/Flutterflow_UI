@@ -1,5 +1,4 @@
 import '../backend/api_requests/api_calls.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -417,7 +416,7 @@ class _PostOrderWidgetState extends State<PostOrderWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
+                                                      .tertiaryColor,
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                 ),
@@ -584,25 +583,11 @@ class _PostOrderWidgetState extends State<PostOrderWidget> {
                                           Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 15,
-                                                borderWidth: 1,
-                                                buttonSize: 60,
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                icon: Icon(
-                                                  Icons.add,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryColor,
-                                                  size: 35,
-                                                ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
-                                                },
+                                              Image.network(
+                                                'https://github.com/meta-metopia/CMHK-Service/raw/main/images/logo.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
                                               ),
                                             ],
                                           ),

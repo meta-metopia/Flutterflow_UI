@@ -338,7 +338,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
+                                                      .tertiaryColor,
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                 ),

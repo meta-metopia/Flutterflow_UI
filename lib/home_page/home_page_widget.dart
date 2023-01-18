@@ -1,7 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -13,19 +13,24 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  TextEditingController? textController1;
+  TextEditingController? textController2;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-
+    textController1 = TextEditingController();
+    textController2 = TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
   void dispose() {
     _unfocusNode.dispose();
+    textController1?.dispose();
+    textController2?.dispose();
     super.dispose();
   }
 
@@ -36,116 +41,66 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      drawer: Drawer(
-        elevation: 16,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ListTile(
-              title: Text(
-                'Event',
-                style: FlutterFlowTheme.of(context).title3,
-              ),
-              subtitle: Text(
-                'manage events',
-                style: FlutterFlowTheme.of(context).subtitle2,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xFF303030),
-                size: 20,
-              ),
-              tileColor: Color(0xFFF5F5F5),
-              dense: false,
-            ),
-            ListTile(
-              title: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).title3,
-              ),
-              subtitle: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).subtitle2,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xFF303030),
-                size: 20,
-              ),
-              tileColor: Color(0xFFF5F5F5),
-              dense: false,
-            ),
-            ListTile(
-              title: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).title3,
-              ),
-              subtitle: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).subtitle2,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xFF303030),
-                size: 20,
-              ),
-              tileColor: Color(0xFFF5F5F5),
-              dense: false,
-            ),
-            ListTile(
-              title: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).title3,
-              ),
-              subtitle: Text(
-                'Lorem ipsum dolor...',
-                style: FlutterFlowTheme.of(context).subtitle2,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xFF303030),
-                size: 20,
-              ),
-              tileColor: Color(0xFFF5F5F5),
-              dense: false,
-            ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Color(0xFFF8F0ED),
-        automaticallyImplyLeading: false,
-        title: Text(
-          'Home Page',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: FlutterFlowTheme.of(context).primaryText,
-                fontSize: 22,
-              ),
-        ),
-        actions: [],
-        centerTitle: false,
-        elevation: 2,
-      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-          child: Column(
+          child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                flex: 8,
-                child: Row(
+                flex: 3,
+                child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                        child: Image.network(
-                          'https://github.com/meta-metopia/CMHK-Service/raw/main/images/logo.png',
-                          width: 100,
-                          height: double.infinity,
-                          fit: BoxFit.cover,
+                      child: Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                        ),
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0, 0),
+                              child: Image.asset(
+                                'assets/images/AdobeStock_162765779.jpeg',
+                                width: double.infinity,
+                                height: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(40, 115, 0, 0),
+                              child: Text(
+                                'That\'s easy, powerful and convenient.',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      fontSize: 30,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(40, 40, 0, 0),
+                              child: Text(
+                                'Manage your database....',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontSize: 50,
+                                    ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -153,244 +108,223 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Expanded(
-                flex: 7,
+                flex: 2,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Wrap(
-                      spacing: 0,
-                      runSpacing: 0,
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      direction: Axis.horizontal,
-                      runAlignment: WrapAlignment.start,
-                      verticalDirection: VerticalDirection.down,
-                      clipBehavior: Clip.none,
-                      children: [
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                          child: Container(
-                            width: 230,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: InkWell(
-                              onTap: () async {
-                                context.pushNamed('post_event');
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 40, 0, 0),
-                                      child: Icon(
-                                        Icons.approval,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 40,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text(
-                                          'Event',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 30,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryColor,
                         ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                          child: Container(
-                            width: 230,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              borderRadius: BorderRadius.circular(12),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Spacer(),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      30, 0, 0, 0),
+                                  child: Text(
+                                    'Welcome back!',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 30,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Column(
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      30, 0, 0, 0),
+                                  child: Text(
+                                    'Please Sign IN',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontSize: 20,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
-                                  flex: 1,
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 40, 0, 0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons
-                                          .americanSignLanguageInterpreting,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 40,
+                                        40, 40, 40, 20),
+                                    child: TextFormField(
+                                      controller: textController1,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Username',
+                                        hintText: 'Username',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyText2,
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryColor,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
                                 Expanded(
-                                  flex: 3,
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0, 0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 10, 10, 10),
-                                      child: Text(
-                                        'EventType',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        40, 20, 40, 20),
+                                    child: TextFormField(
+                                      controller: textController2,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Password',
+                                        hintText: 'Password',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyText2,
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x86101213),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x86101213),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryColor,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        40, 50, 40, 50),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed('get_event');
+                                      },
+                                      text: 'Confirm',
+                                      options: FFButtonOptions(
+                                        width: 130,
+                                        height: 40,
+                                        color: FlutterFlowTheme.of(context)
+                                            .loginButton,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .subtitle2
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 30,
+                                              color: Colors.white,
                                             ),
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
-                          ),
+                            Spacer(),
+                          ],
                         ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                          child: Container(
-                            width: 230,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: InkWell(
-                              onTap: () async {
-                                context.pushNamed('get_event_idCopy');
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 40, 0, 0),
-                                      child: FaIcon(
-                                        FontAwesomeIcons.airFreshener,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 40,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text(
-                                          'Source',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF3E4244),
-                                                fontSize: 30,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                          child: Container(
-                            width: 230,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: InkWell(
-                              onTap: () async {
-                                context.pushNamed('get_order');
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 40, 0, 0),
-                                      child: Icon(
-                                        Icons.account_tree_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 40,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text(
-                                          'Order',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 30,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
