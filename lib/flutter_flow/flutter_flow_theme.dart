@@ -43,6 +43,7 @@ abstract class FlutterFlowTheme {
   late Color lineColor;
   late Color titleColor;
   late Color subtitleColor;
+  late Color fill;
 
   String get title1Family => typography.title1Family;
   TextStyle get title1 => typography.title1;
@@ -76,6 +77,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color lineColor = Color(0xFFE0E3E7);
   late Color titleColor = Color(0xFF635A58);
   late Color subtitleColor = Color(0xFF7B6E6C);
+  late Color fill = Color(0xFFEDE9E9);
 }
 
 abstract class Typography {
@@ -165,6 +167,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color lineColor = Color(0xFF22282F);
   late Color titleColor = Color(0xFF57A505);
   late Color subtitleColor = Color(0xFFDEAFBD);
+  late Color fill = Color(0xFF7404B4);
 }
 
 extension TextStyleHelper on TextStyle {

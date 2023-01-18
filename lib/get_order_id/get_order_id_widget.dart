@@ -1,5 +1,3 @@
-import '../backend/api_requests/api_calls.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -8,34 +6,29 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class PostEventWidget extends StatefulWidget {
-  const PostEventWidget({Key? key}) : super(key: key);
+class GetOrderIdWidget extends StatefulWidget {
+  const GetOrderIdWidget({Key? key}) : super(key: key);
 
   @override
-  _PostEventWidgetState createState() => _PostEventWidgetState();
+  _GetOrderIdWidgetState createState() => _GetOrderIdWidgetState();
 }
 
-class _PostEventWidgetState extends State<PostEventWidget> {
-  ApiCallResponse? apiResultt1s;
-  String? dropDownValue;
-  TextEditingController? textController1;
-  TextEditingController? textController2;
+class _GetOrderIdWidgetState extends State<GetOrderIdWidget> {
+  TextEditingController? textController;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
+    textController = TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
   void dispose() {
     _unfocusNode.dispose();
-    textController1?.dispose();
-    textController2?.dispose();
+    textController?.dispose();
     super.dispose();
   }
 
@@ -97,13 +90,13 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                       height: 45,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                            .tertiaryColor,
                                         borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: Icon(
                                         Icons.airport_shuttle,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
+                                            .primaryText,
                                         size: 24,
                                       ),
                                     ),
@@ -113,13 +106,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                       child: Text(
                                         'Event',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
+                                            .bodyText1,
                                       ),
                                     ),
                                   ],
@@ -233,13 +220,13 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                       height: 45,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .tertiaryColor,
+                                            .alternate,
                                         borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: Icon(
                                         Icons.access_alarm,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryColor,
                                         size: 24,
                                       ),
                                     ),
@@ -254,7 +241,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                               fontFamily: 'Poppins',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                      .alternate,
                                             ),
                                       ),
                                     ),
@@ -347,7 +334,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                     30, 30, 30, 10),
                                             child: InkWell(
                                               onTap: () async {
-                                                context.pushNamed('get_event');
+                                                context.pushNamed('get_order');
                                               },
                                               child: Container(
                                                 width: 100,
@@ -420,7 +407,81 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                     30, 10, 30, 10),
                                             child: InkWell(
                                               onTap: () async {
-                                                context.pushNamed('post_event');
+                                                context.pushNamed('post_order');
+                                              },
+                                              child: Container(
+                                                width: 100,
+                                                height: 50,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(30, 0, 0, 0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(0, 0,
+                                                                    10, 0),
+                                                        child: Icon(
+                                                          Icons
+                                                              .star_border_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 2, 0, 0),
+                                                        child: Text(
+                                                          'Post Your Order',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    30, 10, 30, 10),
+                                            child: InkWell(
+                                              onTap: () async {
+                                                context
+                                                    .pushNamed('get_order_id');
                                               },
                                               child: Container(
                                                 width: 100,
@@ -460,7 +521,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Post  an Event',
+                                                          'Search for Order',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -475,76 +536,6 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    30, 10, 30, 10),
-                                            child: Container(
-                                              width: 100,
-                                              height: 50,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(30, 0, 0, 0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 0, 10, 0),
-                                                      child: Icon(
-                                                        Icons
-                                                            .star_border_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        size: 24,
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 2, 0, 0),
-                                                      child: Text(
-                                                        'Search for Event',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -622,7 +613,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(20, 0, 0, 0),
                                                 child: Text(
-                                                  'Post Event',
+                                                  'Search for Order',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
@@ -663,190 +654,13 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     50, 40, 50, 0),
                                             child: TextFormField(
-                                              controller: textController1,
+                                              controller: textController,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'WalletAddress',
+                                                labelText: 'OrderID',
                                                 hintText:
-                                                    'Type wallet address here...',
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText2,
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                focusedErrorBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                filled: true,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    60, 28, 0, 0),
-                                            child: Text(
-                                              'Event   Type',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 10,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    50, 0, 50, 0),
-                                            child:
-                                                FutureBuilder<ApiCallResponse>(
-                                              future: EventtypeGroup.getetCall
-                                                  .call(),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                final dropDownGetetResponse =
-                                                    snapshot.data!;
-                                                return FlutterFlowDropDown<
-                                                    String>(
-                                                  initialOption:
-                                                      dropDownValue ??= '',
-                                                  options: (EventtypeGroup
-                                                          .getetCall
-                                                          .id(
-                                                    dropDownGetetResponse
-                                                        .jsonBody,
-                                                  ) as List)
-                                                      .map<String>(
-                                                          (s) => s.toString())
-                                                      .toList()
-                                                      .toList(),
-                                                  optionLabels: (EventtypeGroup
-                                                          .getetCall
-                                                          .name(
-                                                    dropDownGetetResponse
-                                                        .jsonBody,
-                                                  ) as List)
-                                                      .map<String>(
-                                                          (s) => s.toString())
-                                                      .toList()
-                                                      .toList(),
-                                                  onChanged: (val) => setState(
-                                                      () =>
-                                                          dropDownValue = val),
-                                                  width: 180,
-                                                  height: 50,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                      ),
-                                                  hintText: 'Please select...',
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .fill,
-                                                  elevation: 2,
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderWidth: 0,
-                                                  borderRadius: 15,
-                                                  margin: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 4, 12, 4),
-                                                  hidesUnderline: true,
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    50, 40, 50, 0),
-                                            child: TextFormField(
-                                              controller: textController2,
-                                              autofocus: true,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelText: 'Value',
-                                                hintText: 'Value',
+                                                    'Type ID of order here...',
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText2,
@@ -906,56 +720,8 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 0, 0, 50),
                                           child: FFButtonWidget(
-                                            onPressed: () async {
-                                              apiResultt1s = await EventGroup
-                                                  .posteventCall
-                                                  .call(
-                                                walletAddress:
-                                                    textController1!.text,
-                                                value: double.tryParse(
-                                                    textController2!.text),
-                                                typeId: dropDownValue,
-                                              );
-                                              if ((apiResultt1s?.succeeded ??
-                                                  true)) {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('Success'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('error'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              }
-
-                                              setState(() {});
+                                            onPressed: () {
+                                              print('Button pressed ...');
                                             },
                                             text: 'Confirm',
                                             options: FFButtonOptions(

@@ -29,12 +29,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => GetEventCopyWidget(),
+      errorBuilder: (context, _) => HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => GetEventCopyWidget(),
+          builder: (context, _) => HomePageWidget(),
           routes: [
             FFRoute(
               name: 'update_event',
@@ -50,11 +50,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'get_event_id',
               path: 'getEventId',
               builder: (context, params) => GetEventIdWidget(),
-            ),
-            FFRoute(
-              name: 'post_event',
-              path: 'postEvent',
-              builder: (context, params) => PostEventWidget(),
             ),
             FFRoute(
               name: 'get_event',
@@ -126,9 +121,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PostOrderWidget(),
             ),
             FFRoute(
-              name: 'delete_order',
-              path: 'deleteOrder',
-              builder: (context, params) => DeleteOrderWidget(),
+              name: 'get_order_id',
+              path: 'getOrderId',
+              builder: (context, params) => GetOrderIdWidget(),
+            ),
+            FFRoute(
+              name: 'post_event',
+              path: 'postEvent',
+              builder: (context, params) => PostEventWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

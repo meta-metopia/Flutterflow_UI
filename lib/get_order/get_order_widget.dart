@@ -56,6 +56,16 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            Expanded(
+                              child: Container(
+                                width: double.infinity,
+                                height: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                ),
+                              ),
+                            ),
                             InkWell(
                               onTap: () async {
                                 context.pushNamed('get_event');
@@ -232,16 +242,6 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                       ),
                                     ),
                                   ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                width: double.infinity,
-                                height: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .tertiaryColor,
                                 ),
                               ),
                             ),
@@ -506,7 +506,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                                               .fromSTEB(
                                                                   0, 2, 0, 0),
                                                       child: Text(
-                                                        'Get Order by ID',
+                                                        'Search for Order',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
