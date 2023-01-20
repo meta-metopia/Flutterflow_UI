@@ -64,13 +64,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'get_event_idCopy',
-              path: 'getEventIdCopy',
-              builder: (context, params) => GetEventIdCopyWidget(
-                eventId: params.getParam('eventId', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'post_et',
               path: 'postEt',
               builder: (context, params) => PostEtWidget(),

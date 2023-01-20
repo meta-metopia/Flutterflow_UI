@@ -378,7 +378,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Get all  Events',
+                                                          'Get all Events',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -732,7 +732,26 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                           .merge(
                                                         softWrap: true,
                                                         child: Text(
-                                                          'Factor',
+                                                          'Event\nType',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .title3
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Edit',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -800,8 +819,20 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                                                                 Text(
                                                                   getJsonField(
                                                                     eventItem,
-                                                                    r'''$.factor''',
+                                                                    r'''$.eventType''',
                                                                   ).toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText1
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                                ),
+                                                                Text(
+                                                                  'Detail>',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1

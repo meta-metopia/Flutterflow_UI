@@ -751,6 +751,10 @@ class _PostEtWidgetState extends State<PostEtWidget> {
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: Text('error'),
+                                                      content: Text((apiResult95k
+                                                                  ?.jsonBody ??
+                                                              '')
+                                                          .toString()),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>

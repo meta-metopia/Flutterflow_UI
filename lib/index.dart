@@ -4,8 +4,6 @@ export 'get_event/get_event_widget.dart' show GetEventWidget;
 export 'get_event_copy/get_event_copy_widget.dart' show GetEventCopyWidget;
 export 'home_page/home_page_widget.dart' show HomePageWidget;
 export 'detailed/detailed_widget.dart' show DetailedWidget;
-export 'get_event_id_copy/get_event_id_copy_widget.dart'
-    show GetEventIdCopyWidget;
 export 'post_et/post_et_widget.dart' show PostEtWidget;
 export 'get_source/get_source_widget.dart' show GetSourceWidget;
 export 'get_order/get_order_widget.dart' show GetOrderWidget;

@@ -396,7 +396,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                                 .fromSTEB(
                                                                     0, 2, 0, 0),
                                                         child: Text(
-                                                          'Get all Orders',
+                                                          'Get all Events',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyText1
@@ -725,7 +725,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     60, 28, 0, 0),
                                             child: Text(
-                                              'Event   Type',
+                                              'Event Type',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
