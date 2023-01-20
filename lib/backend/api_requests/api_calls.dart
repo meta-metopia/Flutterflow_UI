@@ -101,12 +101,18 @@ class PosteventCall {
     String? walletAddress = '',
     String? typeId = '',
     String? accessToken = '',
+    String? sourceID = '',
+    String? orderID = '',
+    double? factor,
   }) {
     final body = '''
 {
   "value": ${value},
   "walletAddress": "${walletAddress}",
-  "typeId": "${typeId}"
+  "typeId": "${typeId}",
+  "sourceId": "${sourceID}",
+  "orderId": "${orderID}",
+  "factor": ${factor}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'postevent',

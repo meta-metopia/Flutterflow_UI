@@ -19,6 +19,9 @@ class _PostEventWidgetState extends State<PostEventWidget> {
   String? dropDownValue;
   TextEditingController? textController1;
   TextEditingController? textController2;
+  TextEditingController? textController3;
+  TextEditingController? textController4;
+  TextEditingController? textController5;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -27,6 +30,9 @@ class _PostEventWidgetState extends State<PostEventWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    textController3 = TextEditingController();
+    textController4 = TextEditingController();
+    textController5 = TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -35,6 +41,9 @@ class _PostEventWidgetState extends State<PostEventWidget> {
     _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
+    textController3?.dispose();
+    textController4?.dispose();
+    textController5?.dispose();
     super.dispose();
   }
 
@@ -886,6 +895,198 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                         ),
                                       ],
                                     ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    50, 40, 50, 0),
+                                            child: TextFormField(
+                                              controller: textController3,
+                                              autofocus: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText: 'Factor',
+                                                hintText: 'Factor',
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2,
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                filled: true,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    50, 40, 50, 0),
+                                            child: TextFormField(
+                                              controller: textController4,
+                                              autofocus: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText: 'Source',
+                                                hintText:
+                                                    'Type your source ID here...',
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2,
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                filled: true,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    50, 40, 50, 0),
+                                            child: TextFormField(
+                                              controller: textController5,
+                                              autofocus: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText: 'Order',
+                                                hintText:
+                                                    'Type your order ID here...',
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2,
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                filled: true,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacer(),
                                     Spacer(),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -906,6 +1107,11 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                 value: double.tryParse(
                                                     textController2!.text),
                                                 typeId: dropDownValue,
+                                                accessToken: FFAppState().token,
+                                                sourceID: textController4!.text,
+                                                orderID: textController5!.text,
+                                                factor: double.tryParse(
+                                                    textController3!.text),
                                               );
                                               if ((apiResultt1s?.succeeded ??
                                                   true)) {
@@ -933,6 +1139,10 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: Text('error'),
+                                                      content: Text((apiResultt1s
+                                                                  ?.jsonBody ??
+                                                              '')
+                                                          .toString()),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
