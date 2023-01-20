@@ -741,8 +741,10 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                     50, 0, 50, 0),
                                             child:
                                                 FutureBuilder<ApiCallResponse>(
-                                              future: EventtypeGroup.getetCall
-                                                  .call(),
+                                              future:
+                                                  EventtypeGroup.getetCall.call(
+                                                accessToken: FFAppState().token,
+                                              ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
