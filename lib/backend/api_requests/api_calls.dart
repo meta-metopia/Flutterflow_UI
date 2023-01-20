@@ -244,8 +244,6 @@ class GetetCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventtypeGroup.headers,
-        'Authorization': 'Bearer ${accessToken}',
-        'Content-Type': 'application/json',
       },
       params: {},
       returnBody: true,
@@ -278,8 +276,6 @@ class DeleteetCall {
       callType: ApiCallType.DELETE,
       headers: {
         ...EventtypeGroup.headers,
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -328,8 +324,6 @@ class GetetbyidCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventtypeGroup.headers,
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -356,8 +350,6 @@ class UpdateetCall {
       callType: ApiCallType.PATCH,
       headers: {
         ...EventtypeGroup.headers,
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
