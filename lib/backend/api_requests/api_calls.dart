@@ -223,6 +223,7 @@ class EventtypeGroup {
   static Map<String, String> headers = {
     'Authorization': 'Bearer [access_token]',
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
   };
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
@@ -503,7 +504,10 @@ class UpdatesourceCall {
 
 class OrderGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer [access_token]',
+  };
   static GetorderCall getorderCall = GetorderCall();
   static PostorderCall postorderCall = PostorderCall();
   static UpdateorderCall updateorderCall = UpdateorderCall();
@@ -653,7 +657,10 @@ class SignupCall {
 
 class UserGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Authorization': 'Bearer [access_token]',
+    'Content-Type': 'application/json',
+  };
   static PostuserCall postuserCall = PostuserCall();
 }
 
