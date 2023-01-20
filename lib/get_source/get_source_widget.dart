@@ -668,7 +668,7 @@ class _GetSourceWidgetState extends State<GetSourceWidget> {
                                                 final source = getJsonField(
                                                   dataTableGetsourceResponse
                                                       .jsonBody,
-                                                  r'''$.items''',
+                                                  r'''$''',
                                                 ).toList();
                                                 return DataTable2(
                                                   columns: [

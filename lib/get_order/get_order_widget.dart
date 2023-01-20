@@ -653,7 +653,7 @@ class _GetOrderWidgetState extends State<GetOrderWidget> {
                                                 final order = getJsonField(
                                                   dataTableGetorderResponse
                                                       .jsonBody,
-                                                  r'''$.items''',
+                                                  r'''$''',
                                                 ).toList();
                                                 return DataTable2(
                                                   columns: [
