@@ -379,10 +379,7 @@ class UpdateetCall {
 
 class SourceGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer [access_token]',
-  };
+  static Map<String, String> headers = {};
   static GetsourceCall getsourceCall = GetsourceCall();
   static PostsourceCall postsourceCall = PostsourceCall();
   static DeletesourceCall deletesourceCall = DeletesourceCall();
@@ -391,13 +388,18 @@ class SourceGroup {
 }
 
 class GetsourceCall {
-  Future<ApiCallResponse> call() {
+  Future<ApiCallResponse> call({
+    String? accessToken = '',
+  }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getsource',
       apiUrl: '${SourceGroup.baseUrl}/source',
       callType: ApiCallType.GET,
       headers: {
         ...SourceGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+        'Accept': 'application/json',
       },
       params: {},
       returnBody: true,
@@ -411,6 +413,7 @@ class GetsourceCall {
 class PostsourceCall {
   Future<ApiCallResponse> call({
     String? name = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -422,6 +425,8 @@ class PostsourceCall {
       callType: ApiCallType.POST,
       headers: {
         ...SourceGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
@@ -437,6 +442,7 @@ class PostsourceCall {
 class DeletesourceCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'deletesource',
@@ -444,6 +450,8 @@ class DeletesourceCall {
       callType: ApiCallType.DELETE,
       headers: {
         ...SourceGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
       },
       params: {},
       returnBody: true,
@@ -457,6 +465,7 @@ class DeletesourceCall {
 class GetsourcebyidCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getsourcebyid',
@@ -464,6 +473,8 @@ class GetsourcebyidCall {
       callType: ApiCallType.GET,
       headers: {
         ...SourceGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -478,6 +489,7 @@ class UpdatesourceCall {
   Future<ApiCallResponse> call({
     String? name = '',
     String? id = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -489,6 +501,8 @@ class UpdatesourceCall {
       callType: ApiCallType.PATCH,
       headers: {
         ...SourceGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
@@ -507,23 +521,26 @@ class UpdatesourceCall {
 
 class OrderGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer [access_token]',
-  };
+  static Map<String, String> headers = {};
   static GetorderCall getorderCall = GetorderCall();
   static PostorderCall postorderCall = PostorderCall();
   static UpdateorderCall updateorderCall = UpdateorderCall();
+  static DeleteorderCall deleteorderCall = DeleteorderCall();
+  static GetorderbyidCall getorderbyidCall = GetorderbyidCall();
 }
 
 class GetorderCall {
-  Future<ApiCallResponse> call() {
+  Future<ApiCallResponse> call({
+    String? accessToken = '',
+  }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getorder',
       apiUrl: '${OrderGroup.baseUrl}/order',
       callType: ApiCallType.GET,
       headers: {
         ...OrderGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -537,6 +554,7 @@ class GetorderCall {
 class PostorderCall {
   Future<ApiCallResponse> call({
     String? merchantId = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -548,6 +566,8 @@ class PostorderCall {
       callType: ApiCallType.POST,
       headers: {
         ...OrderGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
       },
       params: {},
       body: body,
@@ -564,6 +584,7 @@ class UpdateorderCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? merchantId = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -575,10 +596,58 @@ class UpdateorderCall {
       callType: ApiCallType.PATCH,
       headers: {
         ...OrderGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class DeleteorderCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'deleteorder',
+      apiUrl: '${OrderGroup.baseUrl}/order/${id}',
+      callType: ApiCallType.DELETE,
+      headers: {
+        ...OrderGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GetorderbyidCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getorderbyid',
+      apiUrl: '${OrderGroup.baseUrl}/order/${id}',
+      callType: ApiCallType.GET,
+      headers: {
+        ...OrderGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -660,11 +729,12 @@ class SignupCall {
 
 class UserGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {
-    'Authorization': 'Bearer [access_token]',
-    'Content-Type': 'application/json',
-  };
+  static Map<String, String> headers = {};
   static PostuserCall postuserCall = PostuserCall();
+  static GetuserCall getuserCall = GetuserCall();
+  static UpdateuserCall updateuserCall = UpdateuserCall();
+  static DeleteuserCall deleteuserCall = DeleteuserCall();
+  static GetuserbyidCall getuserbyidCall = GetuserbyidCall();
 }
 
 class PostuserCall {
@@ -687,6 +757,98 @@ class PostuserCall {
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GetuserCall {
+  Future<ApiCallResponse> call({
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getuser',
+      apiUrl: '${UserGroup.baseUrl}/user',
+      callType: ApiCallType.GET,
+      headers: {
+        ...UserGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class UpdateuserCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateuser',
+      apiUrl: '${UserGroup.baseUrl}/user/${id}',
+      callType: ApiCallType.PATCH,
+      headers: {
+        ...UserGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class DeleteuserCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'deleteuser',
+      apiUrl: '${UserGroup.baseUrl}/user/${id}',
+      callType: ApiCallType.DELETE,
+      headers: {
+        ...UserGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GetuserbyidCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? accessToken = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getuserbyid',
+      apiUrl: '${UserGroup.baseUrl}/user/${id}',
+      callType: ApiCallType.GET,
+      headers: {
+        ...UserGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
