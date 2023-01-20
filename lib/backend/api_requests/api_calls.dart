@@ -221,9 +221,8 @@ class DeleteeventCall {
 class EventtypeGroup {
   static String baseUrl = 'https://kongshumapi.net';
   static Map<String, String> headers = {
-    'Authorization': 'Bearer [access_token]',
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
+    'Authorization': 'Bearer [access_token]',
   };
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
@@ -293,7 +292,7 @@ class DeleteetCall {
 class PostetCall {
   Future<ApiCallResponse> call({
     String? name = '',
-    String? accessKey = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
