@@ -268,6 +268,7 @@ class DeleteetCall {
 class PostetCall {
   Future<ApiCallResponse> call({
     String? name = '',
+    String? accessKey = '',
   }) {
     final body = '''
 {
@@ -279,6 +280,9 @@ class PostetCall {
       callType: ApiCallType.POST,
       headers: {
         ...EventtypeGroup.headers,
+        'Content-Type': 'application/json',
+        'Accpet': 'application/json',
+        'Authorization': 'Bearer ${accessKey}',
       },
       params: {},
       body: body,
