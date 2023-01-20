@@ -220,11 +220,7 @@ class DeleteeventCall {
 
 class EventtypeGroup {
   static String baseUrl = 'https://kongshumapi.net';
-  static Map<String, String> headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer [access_token]',
-    'Accept': 'application/json',
-  };
+  static Map<String, String> headers = {};
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
   static PostetCall postetCall = PostetCall();
@@ -301,6 +297,9 @@ class PostetCall {
       callType: ApiCallType.POST,
       headers: {
         ...EventtypeGroup.headers,
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
       },
       params: {},
       body: body,
