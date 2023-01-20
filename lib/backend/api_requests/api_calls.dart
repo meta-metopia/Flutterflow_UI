@@ -223,6 +223,7 @@ class EventtypeGroup {
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer [access_token]',
+    'Accept': 'application/json',
   };
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
