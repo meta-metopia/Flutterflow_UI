@@ -25,6 +25,7 @@ class GeteventCall {
   Future<ApiCallResponse> call({
     int? page = 1,
     int? per = 4,
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getevent',
@@ -32,6 +33,8 @@ class GeteventCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -97,6 +100,7 @@ class PosteventCall {
     double? value,
     String? walletAddress = '',
     String? typeId = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -110,6 +114,8 @@ class PosteventCall {
       callType: ApiCallType.POST,
       headers: {
         ...EventGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
@@ -125,6 +131,7 @@ class PosteventCall {
 class GeteventbyidCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'geteventbyid',
@@ -132,6 +139,8 @@ class GeteventbyidCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -151,6 +160,7 @@ class UpdateeventCall {
     String? sourceId = '',
     String? orderId = '',
     String? id = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -167,6 +177,8 @@ class UpdateeventCall {
       callType: ApiCallType.PATCH,
       headers: {
         ...EventGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
       },
       params: {},
       body: body,
@@ -182,6 +194,7 @@ class UpdateeventCall {
 class DeleteeventCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'deleteevent',
@@ -189,6 +202,8 @@ class DeleteeventCall {
       callType: ApiCallType.DELETE,
       headers: {
         ...EventGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -205,7 +220,10 @@ class DeleteeventCall {
 
 class EventtypeGroup {
   static String baseUrl = 'https://kongshumapi.net';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Authorization': 'Bearer [access_token]',
+    'Content-Type': 'application/json',
+  };
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
   static PostetCall postetCall = PostetCall();
@@ -217,6 +235,7 @@ class GetetCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? name = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getet',
@@ -224,6 +243,8 @@ class GetetCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventtypeGroup.headers,
+        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json',
       },
       params: {},
       returnBody: true,
@@ -248,6 +269,7 @@ class GetetCall {
 class DeleteetCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'deleteet',
@@ -255,6 +277,8 @@ class DeleteetCall {
       callType: ApiCallType.DELETE,
       headers: {
         ...EventtypeGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -280,9 +304,6 @@ class PostetCall {
       callType: ApiCallType.POST,
       headers: {
         ...EventtypeGroup.headers,
-        'Content-Type': 'application/json',
-        'Accpet': 'application/json',
-        'Authorization': 'Bearer ${accessKey}',
       },
       params: {},
       body: body,
@@ -298,6 +319,7 @@ class PostetCall {
 class GetetbyidCall {
   Future<ApiCallResponse> call({
     String? id = '',
+    String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'getetbyid',
@@ -305,6 +327,8 @@ class GetetbyidCall {
       callType: ApiCallType.GET,
       headers: {
         ...EventtypeGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       returnBody: true,
@@ -319,6 +343,7 @@ class UpdateetCall {
   Future<ApiCallResponse> call({
     String? name = '',
     String? id = '',
+    String? accessToken = '',
   }) {
     final body = '''
 {
@@ -330,6 +355,8 @@ class UpdateetCall {
       callType: ApiCallType.PATCH,
       headers: {
         ...EventtypeGroup.headers,
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
       },
       params: {},
       body: body,
@@ -348,7 +375,10 @@ class UpdateetCall {
 
 class SourceGroup {
   static String baseUrl = 'kongshumapi.net';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer [access_token]',
+  };
   static GetsourceCall getsourceCall = GetsourceCall();
   static PostsourceCall postsourceCall = PostsourceCall();
   static DeletesourceCall deletesourceCall = DeletesourceCall();
