@@ -15,6 +15,7 @@ class FFAppState extends ChangeNotifier {
 
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
+    _token = prefs.getString('ff_token') ?? _token;
   }
 
   void update(VoidCallback callback) {
@@ -34,6 +35,13 @@ class FFAppState extends ChangeNotifier {
   String get orderId => _orderId;
   set orderId(String _value) {
     _orderId = _value;
+  }
+
+  String _token = '';
+  String get token => _token;
+  set token(String _value) {
+    _token = _value;
+    prefs.setString('ff_token', _value);
   }
 }
 

@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -13,6 +14,7 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  ApiCallResponse? apiResultuoe;
   TextEditingController? textController1;
   TextEditingController? textController2;
   final _unfocusNode = FocusNode();
@@ -296,7 +298,44 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         40, 50, 40, 50),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('get_event');
+                                        apiResultuoe =
+                                            await AuthGroup.loginCall.call(
+                                          username: textController1!.text,
+                                          password: textController2!.text,
+                                        );
+                                        if ((apiResultuoe?.succeeded ?? true)) {
+                                          FFAppState().update(() {
+                                            FFAppState().token = getJsonField(
+                                              (apiResultuoe?.jsonBody ?? ''),
+                                              r'''$.access_token''',
+                                            ).toString();
+                                          });
+
+                                          context.pushNamed('get_event');
+                                        } else {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('error'),
+                                                content: Text(
+                                                    (apiResultuoe?.statusCode ??
+                                                            200)
+                                                        .toString()),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
+
+                                        setState(() {});
                                       },
                                       text: 'Confirm',
                                       options: FFButtonOptions(
@@ -308,7 +347,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             .subtitle2
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
                                             ),
                                         borderSide: BorderSide(
                                           color: Colors.transparent,

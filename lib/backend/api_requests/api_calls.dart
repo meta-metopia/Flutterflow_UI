@@ -209,6 +209,8 @@ class EventtypeGroup {
   static GetetCall getetCall = GetetCall();
   static DeleteetCall deleteetCall = DeleteetCall();
   static PostetCall postetCall = PostetCall();
+  static GetetbyidCall getetbyidCall = GetetbyidCall();
+  static UpdateetCall updateetCall = UpdateetCall();
 }
 
 class GetetCall {
@@ -275,6 +277,53 @@ class PostetCall {
       callName: 'postet',
       apiUrl: '${EventtypeGroup.baseUrl}/eventtype',
       callType: ApiCallType.POST,
+      headers: {
+        ...EventtypeGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GetetbyidCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getetbyid',
+      apiUrl: '${EventtypeGroup.baseUrl}/eventtype/${id}',
+      callType: ApiCallType.GET,
+      headers: {
+        ...EventtypeGroup.headers,
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class UpdateetCall {
+  Future<ApiCallResponse> call({
+    String? name = '',
+    String? id = '',
+  }) {
+    final body = '''
+{
+  "name": "${name}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateet',
+      apiUrl: '${EventtypeGroup.baseUrl}/eventtype/${id}',
+      callType: ApiCallType.PATCH,
       headers: {
         ...EventtypeGroup.headers,
       },
@@ -498,6 +547,111 @@ class UpdateorderCall {
 }
 
 /// End order Group Code
+
+/// Start auth Group Code
+
+class AuthGroup {
+  static String baseUrl = 'kongshumapi.net';
+  static Map<String, String> headers = {};
+  static LoginCall loginCall = LoginCall();
+  static SignupCall signupCall = SignupCall();
+}
+
+class LoginCall {
+  Future<ApiCallResponse> call({
+    String? username = '',
+    String? password = '',
+  }) {
+    final body = '''
+{
+  "username": "${username}",
+  "password": "${password}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'login',
+      apiUrl: '${AuthGroup.baseUrl}/auth/login',
+      callType: ApiCallType.POST,
+      headers: {
+        ...AuthGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class SignupCall {
+  Future<ApiCallResponse> call({
+    String? username = '',
+    String? password = '',
+  }) {
+    final body = '''
+{
+  "username": "${username}",
+  "password": "${password}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'signup',
+      apiUrl: '${AuthGroup.baseUrl}/auth/signup',
+      callType: ApiCallType.POST,
+      headers: {
+        ...AuthGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+/// End auth Group Code
+
+/// Start user Group Code
+
+class UserGroup {
+  static String baseUrl = 'kongshumapi.net';
+  static Map<String, String> headers = {};
+  static PostuserCall postuserCall = PostuserCall();
+}
+
+class PostuserCall {
+  Future<ApiCallResponse> call({
+    String? username = '',
+    String? password = '',
+  }) {
+    final body = '''
+{
+  "username": "${username}",
+  "password": "${password}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'postuser',
+      apiUrl: '${UserGroup.baseUrl}/user',
+      callType: ApiCallType.POST,
+      headers: {
+        ...UserGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+/// End user Group Code
 
 class ApiPagingParams {
   int nextPageNumber = 0;

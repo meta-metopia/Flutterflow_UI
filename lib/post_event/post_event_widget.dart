@@ -774,7 +774,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                   ) as List)
                                                       .map<String>(
                                                           (s) => s.toString())
-                                                      .toList()
+                                                      .toList()!
                                                       .toList(),
                                                   optionLabels: (EventtypeGroup
                                                           .getetCall
@@ -784,7 +784,7 @@ class _PostEventWidgetState extends State<PostEventWidget> {
                                                   ) as List)
                                                       .map<String>(
                                                           (s) => s.toString())
-                                                      .toList()
+                                                      .toList()!
                                                       .toList(),
                                                   onChanged: (val) => setState(
                                                       () =>

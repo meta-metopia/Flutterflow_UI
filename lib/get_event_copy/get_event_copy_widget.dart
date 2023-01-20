@@ -444,10 +444,11 @@ class _GetEventCopyWidgetState extends State<GetEventCopyWidget> {
                           return Builder(
                             builder: (context) {
                               final events = EventGroup.geteventCall
-                                  .items(
-                                    dataTableGeteventResponse.jsonBody,
-                                  )
-                                  .toList();
+                                      .items(
+                                        dataTableGeteventResponse.jsonBody,
+                                      )
+                                      ?.toList() ??
+                                  [];
                               return DataTable2(
                                 columns: [
                                   DataColumn2(
