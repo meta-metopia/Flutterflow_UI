@@ -43,6 +43,24 @@ class FFAppState extends ChangeNotifier {
     _token = _value;
     prefs.setString('ff_token', _value);
   }
+
+  int _selection = 0;
+  int get selection => _selection;
+  set selection(int _value) {
+    _selection = _value;
+  }
+
+  int _sideSelection = 0;
+  int get sideSelection => _sideSelection;
+  set sideSelection(int _value) {
+    _sideSelection = _value;
+  }
+
+  String _id = '';
+  String get id => _id;
+  set id(String _value) {
+    _id = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

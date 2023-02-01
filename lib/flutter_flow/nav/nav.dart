@@ -42,14 +42,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GetEventIdWidget(),
             ),
             FFRoute(
-              name: 'get_event',
-              path: 'getEvent',
-              builder: (context, params) => GetEventWidget(),
-            ),
-            FFRoute(
               name: 'get_eventCopy',
               path: 'getEventCopy',
               builder: (context, params) => GetEventCopyWidget(),
+            ),
+            FFRoute(
+              name: 'get_event',
+              path: 'getEvent',
+              builder: (context, params) => GetEventWidget(),
             ),
             FFRoute(
               name: 'HomePage',
@@ -97,6 +97,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'get_et',
               path: 'getEt',
               builder: (context, params) => GetEtWidget(),
+            ),
+            FFRoute(
+              name: 'detail_event',
+              path: 'detailEvent',
+              builder: (context, params) => DetailEventWidget(),
             ),
             FFRoute(
               name: 'post_event',
