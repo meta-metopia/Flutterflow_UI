@@ -11,10 +11,10 @@ import 'package:provider/provider.dart';
 class DetailEventWidget extends StatefulWidget {
   const DetailEventWidget({
     Key? key,
-    this.id,
+    this.passId,
   }) : super(key: key);
 
-  final String? id;
+  final String? passId;
 
   @override
   _DetailEventWidgetState createState() => _DetailEventWidgetState();
@@ -64,7 +64,7 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
                 flex: 10,
                 child: FutureBuilder<ApiCallResponse>(
                   future: EventGroup.geteventbyidCall.call(
-                    id: widget.id,
+                    id: widget.passId,
                     accessToken: FFAppState().token,
                   ),
                   builder: (context, snapshot) {
@@ -82,13 +82,13 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
                     }
                     final scaffoldGeteventbyidResponse = snapshot.data!;
                     return ScaffoldWidget(
-                      id: widget.id,
+                      checkId: widget.passId,
                     );
                   },
                 ),
               ),
               Text(
-                widget.id!,
+                widget.passId!,
                 style: FlutterFlowTheme.of(context).bodyText1,
               ),
             ],

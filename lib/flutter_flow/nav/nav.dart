@@ -102,7 +102,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'detail_event',
               path: 'detailEvent',
               builder: (context, params) => DetailEventWidget(
-                id: params.getParam('id', ParamType.String),
+                passId: params.getParam('passId', ParamType.String),
               ),
             ),
             FFRoute(

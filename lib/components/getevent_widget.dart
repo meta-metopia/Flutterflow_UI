@@ -273,7 +273,7 @@ class _GeteventWidgetState extends State<GeteventWidget> {
                                               context.pushNamed(
                                                 'detail_event',
                                                 queryParams: {
-                                                  'id': serializeParam(
+                                                  'passId': serializeParam(
                                                     getJsonField(
                                                       dataTableGeteventResponse
                                                           .jsonBody,

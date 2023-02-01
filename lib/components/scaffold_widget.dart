@@ -10,10 +10,10 @@ import 'package:provider/provider.dart';
 class ScaffoldWidget extends StatefulWidget {
   const ScaffoldWidget({
     Key? key,
-    this.id,
+    this.checkId,
   }) : super(key: key);
 
-  final String? id;
+  final String? checkId;
 
   @override
   _ScaffoldWidgetState createState() => _ScaffoldWidgetState();
