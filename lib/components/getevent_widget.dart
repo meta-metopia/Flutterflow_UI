@@ -275,8 +275,7 @@ class _GeteventWidgetState extends State<GeteventWidget> {
                                                 queryParams: {
                                                   'passId': serializeParam(
                                                     getJsonField(
-                                                      dataTableGeteventResponse
-                                                          .jsonBody,
+                                                      eventItem,
                                                       r'''$.id''',
                                                     ).toString(),
                                                     ParamType.String,
