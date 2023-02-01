@@ -9,7 +9,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class DetailEventWidget extends StatefulWidget {
-  const DetailEventWidget({Key? key}) : super(key: key);
+  const DetailEventWidget({
+    Key? key,
+    this.id,
+  }) : super(key: key);
+
+  final String? id;
 
   @override
   _DetailEventWidgetState createState() => _DetailEventWidgetState();
@@ -38,7 +43,7 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: EventGroup.geteventbyidCall.call(
-        id: FFAppState().id,
+        id: widget.id,
         accessToken: FFAppState().token,
       ),
       builder: (context, snapshot) {

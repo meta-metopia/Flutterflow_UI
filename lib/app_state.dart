@@ -61,6 +61,18 @@ class FFAppState extends ChangeNotifier {
   set id(String _value) {
     _id = _value;
   }
+
+  int _page = 0;
+  int get page => _page;
+  set page(int _value) {
+    _page = _value;
+  }
+
+  int _per = 0;
+  int get per => _per;
+  set per(int _value) {
+    _per = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

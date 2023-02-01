@@ -55,18 +55,12 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
                     : FlutterFlowTheme.of(context).tertiaryColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Icon(
-                Icons.airport_shuttle,
-                color: widget.isSelected!
-                    ? FlutterFlowTheme.of(context).primaryColor
-                    : FlutterFlowTheme.of(context).primaryText,
-                size: 24,
-              ),
+              child: widget.icon!,
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 5),
               child: Text(
-                'Event',
+                widget.title!,
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Poppins',
                       color: widget.isSelected!

@@ -270,14 +270,18 @@ class _GeteventWidgetState extends State<GeteventWidget> {
                                           ),
                                           InkWell(
                                             onTap: () async {
-                                              context.pushNamed('detail_event');
-
-                                              FFAppState().update(() {
-                                                FFAppState().id = getJsonField(
-                                                  eventItem,
-                                                  r'''$.id''',
-                                                ).toString();
-                                              });
+                                              context.pushNamed(
+                                                'detail_event',
+                                                queryParams: {
+                                                  'id': serializeParam(
+                                                    getJsonField(
+                                                      eventItem,
+                                                      r'''$.id''',
+                                                    ).toString(),
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
                                             },
                                             child: Text(
                                               'Detail>',
