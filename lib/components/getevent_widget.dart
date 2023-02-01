@@ -257,7 +257,7 @@ class _GeteventWidgetState extends State<GeteventWidget> {
                                           Text(
                                             getJsonField(
                                               eventItem,
-                                              r'''$.eventType''',
+                                              r'''$.eventType.name''',
                                             ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
@@ -275,7 +275,8 @@ class _GeteventWidgetState extends State<GeteventWidget> {
                                                 queryParams: {
                                                   'id': serializeParam(
                                                     getJsonField(
-                                                      eventItem,
+                                                      dataTableGeteventResponse
+                                                          .jsonBody,
                                                       r'''$.id''',
                                                     ).toString(),
                                                     ParamType.String,
