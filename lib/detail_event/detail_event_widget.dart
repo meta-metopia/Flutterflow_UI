@@ -1,6 +1,6 @@
 import '../backend/api_requests/api_calls.dart';
+import '../components/eventdetail_widget.dart';
 import '../components/menu_widget.dart';
-import '../components/scaffold_widget.dart';
 import '../components/side_bar_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -80,8 +80,8 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
                         ),
                       );
                     }
-                    final scaffoldGeteventbyidResponse = snapshot.data!;
-                    return ScaffoldWidget(
+                    final eventdetailGeteventbyidResponse = snapshot.data!;
+                    return EventdetailWidget(
                       checkId: widget.passId,
                     );
                   },
