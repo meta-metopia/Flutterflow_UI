@@ -41,54 +41,56 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return FutureBuilder<ApiCallResponse>(
-      future: EventGroup.geteventbyidCall.call(
-        id: widget.id,
-        accessToken: FFAppState().token,
-      ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 50,
-              height: 50,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                flex: 1,
+                child: SideBarWidget(),
               ),
-            ),
-          );
-        }
-        final detailEventGeteventbyidResponse = snapshot.data!;
-        return Scaffold(
-          key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          body: SafeArea(
-            child: GestureDetector(
-              onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: SideBarWidget(),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: MenuWidget(
-                      updateSelection: () async {},
-                    ),
-                  ),
-                  Expanded(
-                    flex: 10,
-                    child: ScaffoldWidget(),
-                  ),
-                ],
+              Expanded(
+                flex: 3,
+                child: MenuWidget(
+                  updateSelection: () async {},
+                ),
               ),
-            ),
+              Expanded(
+                flex: 10,
+                child: FutureBuilder<ApiCallResponse>(
+                  future: EventGroup.geteventbyidCall.call(
+                    id: widget.id,
+                    accessToken: FFAppState().token,
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: CircularProgressIndicator(
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                          ),
+                        ),
+                      );
+                    }
+                    final scaffoldGeteventbyidResponse = snapshot.data!;
+                    return ScaffoldWidget(
+                      id: widget.id,
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

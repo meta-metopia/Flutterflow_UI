@@ -8,7 +8,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class ScaffoldWidget extends StatefulWidget {
-  const ScaffoldWidget({Key? key}) : super(key: key);
+  const ScaffoldWidget({
+    Key? key,
+    this.id,
+  }) : super(key: key);
+
+  final String? id;
 
   @override
   _ScaffoldWidgetState createState() => _ScaffoldWidgetState();
