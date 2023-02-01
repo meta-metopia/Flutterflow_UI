@@ -72,7 +72,7 @@ class _GetEventWidgetState extends State<GetEventWidget> {
                           child: GeteventWidget(),
                         ),
                       if ((FFAppState().sideSelection == 0) &&
-                          (FFAppState().sideSelection == 1))
+                          (FFAppState().selection == 1))
                         Expanded(
                           flex: 10,
                           child: PosteventWidget(),
