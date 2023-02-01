@@ -87,6 +87,10 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
                   },
                 ),
               ),
+              Text(
+                widget.id!,
+                style: FlutterFlowTheme.of(context).bodyText1,
+              ),
             ],
           ),
         ),
