@@ -57,7 +57,7 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
               ),
               child: Icon(
                 Icons.airport_shuttle,
-                color: FFAppState().sideSelection == 1
+                color: widget.isSelected!
                     ? FlutterFlowTheme.of(context).primaryColor
                     : FlutterFlowTheme.of(context).primaryText,
                 size: 24,
