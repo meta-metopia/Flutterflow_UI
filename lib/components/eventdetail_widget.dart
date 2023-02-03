@@ -276,7 +276,6 @@ class _EventdetailWidgetState extends State<EventdetailWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                               ),
-                                          hintText: 'Please select...',
                                           fillColor:
                                               FlutterFlowTheme.of(context).fill,
                                           elevation: 2,

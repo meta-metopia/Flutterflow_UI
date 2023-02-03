@@ -87,10 +87,6 @@ class _DetailEventWidgetState extends State<DetailEventWidget> {
                   },
                 ),
               ),
-              Text(
-                widget.passId!,
-                style: FlutterFlowTheme.of(context).bodyText1,
-              ),
             ],
           ),
         ),

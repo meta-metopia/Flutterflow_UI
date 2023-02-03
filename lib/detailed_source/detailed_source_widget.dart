@@ -1,6 +1,5 @@
-import '../components/getsource_widget.dart';
+import '../components/detailed_s_widget.dart';
 import '../components/menu_widget.dart';
-import '../components/post_s_widget.dart';
 import '../components/side_bar_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -8,14 +7,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class GetSourceWidget extends StatefulWidget {
-  const GetSourceWidget({Key? key}) : super(key: key);
+class DetailedSourceWidget extends StatefulWidget {
+  const DetailedSourceWidget({
+    Key? key,
+    this.passId,
+  }) : super(key: key);
+
+  final String? passId;
 
   @override
-  _GetSourceWidgetState createState() => _GetSourceWidgetState();
+  _DetailedSourceWidgetState createState() => _DetailedSourceWidgetState();
 }
 
-class _GetSourceWidgetState extends State<GetSourceWidget> {
+class _DetailedSourceWidgetState extends State<DetailedSourceWidget> {
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -55,18 +59,12 @@ class _GetSourceWidgetState extends State<GetSourceWidget> {
                   updateSelection: () async {},
                 ),
               ),
-              if ((FFAppState().sideSelection == 2) &&
-                  (FFAppState().selection == 0))
-                Expanded(
-                  flex: 10,
-                  child: GetsourceWidget(),
+              Expanded(
+                flex: 10,
+                child: DetailedSWidget(
+                  sourceId: widget.passId,
                 ),
-              if ((FFAppState().sideSelection == 2) &&
-                  (FFAppState().selection == 1))
-                Expanded(
-                  flex: 10,
-                  child: PostSWidget(),
-                ),
+              ),
             ],
           ),
         ),

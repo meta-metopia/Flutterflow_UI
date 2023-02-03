@@ -37,11 +37,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => HomePageWidget(),
           routes: [
             FFRoute(
-              name: 'get_event_id',
-              path: 'getEventId',
-              builder: (context, params) => GetEventIdWidget(),
-            ),
-            FFRoute(
               name: 'get_eventCopy',
               path: 'getEventCopy',
               builder: (context, params) => GetEventCopyWidget(),
@@ -50,6 +45,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'get_event',
               path: 'getEvent',
               builder: (context, params) => GetEventWidget(),
+            ),
+            FFRoute(
+              name: 'post_event',
+              path: 'postEvent',
+              builder: (context, params) => PostEventWidget(),
             ),
             FFRoute(
               name: 'HomePage',
@@ -64,11 +64,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'post_et',
-              path: 'postEt',
-              builder: (context, params) => PostEtWidget(),
-            ),
-            FFRoute(
               name: 'get_source',
               path: 'getSource',
               builder: (context, params) => GetSourceWidget(),
@@ -79,24 +74,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GetOrderWidget(),
             ),
             FFRoute(
-              name: 'post_order',
-              path: 'postOrder',
-              builder: (context, params) => PostOrderWidget(),
-            ),
-            FFRoute(
               name: 'get_order_id',
               path: 'getOrderId',
               builder: (context, params) => GetOrderIdWidget(),
             ),
             FFRoute(
+              name: 'post_order',
+              path: 'postOrder',
+              builder: (context, params) => PostOrderWidget(),
+            ),
+            FFRoute(
               name: 'post_source',
               path: 'postSource',
               builder: (context, params) => PostSourceWidget(),
-            ),
-            FFRoute(
-              name: 'get_et',
-              path: 'getEt',
-              builder: (context, params) => GetEtWidget(),
             ),
             FFRoute(
               name: 'detail_event',
@@ -106,19 +96,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'post_event',
-              path: 'postEvent',
-              builder: (context, params) => PostEventWidget(),
-            ),
-            FFRoute(
-              name: 'get_et_id',
-              path: 'getEtId',
-              builder: (context, params) => GetEtIdWidget(),
-            ),
-            FFRoute(
               name: 'get_source_id',
               path: 'getSourceId',
               builder: (context, params) => GetSourceIdWidget(),
+            ),
+            FFRoute(
+              name: 'get_et',
+              path: 'getEt',
+              builder: (context, params) => GetEtWidget(),
+            ),
+            FFRoute(
+              name: 'detail_et',
+              path: 'detailEt',
+              builder: (context, params) => DetailEtWidget(
+                passId: params.getParam('passId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'detailed_source',
+              path: 'detailedSource',
+              builder: (context, params) => DetailedSourceWidget(
+                passId: params.getParam('passId', ParamType.String),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
